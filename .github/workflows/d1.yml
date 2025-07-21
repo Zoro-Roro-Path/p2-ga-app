@@ -5,7 +5,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
             - name: GET CODE
-              run: actions/checkout@v3
+              uses: actions/checkout@v3
             - name: INSTALL DEPENDECIES
               run: npm ci
             - name: Lint
