@@ -6,8 +6,10 @@ on:
             - main
             - 'dev-*'
             - 'feature/**'
-        paths-ignore:
+        paths-ignore:   #any changes pushed to following path wion't trigger the workflow it will ignore
             - '.github/workflows/*'  
+        # paths:    #it will trigger w/f only if changes are pushed to following path
+        #     - '.github/workflows/*'
 jobs:
     deploy:
         runs-on: ubuntu-latest
