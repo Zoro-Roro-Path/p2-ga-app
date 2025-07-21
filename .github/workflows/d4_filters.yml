@@ -1,0 +1,26 @@
+name: Deployment Excercise 4 Filters
+on: 
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+            - 'dev-*'
+            - 'feature/**'
+        paths-ignore:
+            - '.github/workflow/*'
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: GET CODE
+              uses: actions/checkout@v3
+            - name: INSTALL DEPENDECIES
+              run: npm ci
+            - name: Lint
+              run: npm run lint
+            - name: TEST CODE
+              run: npm run test
+            - name: BUILD code
+              run: npm run build
+            - name: DEPLOY CODE
+              run: echo "Deploying....."
