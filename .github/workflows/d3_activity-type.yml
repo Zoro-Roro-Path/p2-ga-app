@@ -1,7 +1,7 @@
 name: Deployment Excercise 3 Activity types
 on:
     pull_request:
-        types:
+        types: #refer docs for more info
             - opened
             - closed
     workflow_dispatch:
