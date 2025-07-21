@@ -7,7 +7,7 @@ on:
             - 'dev-*'
             - 'feature/**'
         paths:
-            - '.github/workflow/*'
+            - 'src'   
 jobs:
     deploy:
         runs-on: ubuntu-latest
