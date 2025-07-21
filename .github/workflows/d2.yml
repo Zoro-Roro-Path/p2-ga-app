@@ -1,12 +1,12 @@
 #same as d1 just creating multiple jobs instead of 1 as in d1
-name: Deployment Excercise 1
+name: Deployment Excercise 2
 on: workflow_dispatch
 jobs:
     lint:
         runs-on: ubuntu-latest
         steps: 
             - name: GET CODE
-              run: actions/checkout@v3
+              uses: actions/checkout@v3
             - name: INSTALL DEPENDECIES
               run: npm ci
             - name: Lint
@@ -16,7 +16,7 @@ jobs:
         runs-on: ubuntu-latest
         steps: 
             - name: GET CODE
-              run: actions/checkout@v3
+              uses: actions/checkout@v3
             - name: INSTALL DEPENDECIES
               run: npm ci
             - name: TEST CODE
@@ -26,7 +26,7 @@ jobs:
         needs: test
         steps: 
             - name: GET CODE
-              run: actions/checkout@v3
+              uses: actions/checkout@v3
             - name: INSTALL DEPENDECIES
               run: npm ci
             - name: Lint
